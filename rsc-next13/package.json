@@ -1,0 +1,37 @@
+{
+  "name": "rsc-next13",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "dev:test": "IS_PLAYWRIGHT_TEST=true pnpm dev",
+    "start": "next start",
+    "start:test": "IS_PLAYWRIGHT_TEST=true next start",
+    "lint": "next lint",
+    "test": "pnpm test:ci --ui -c playwright.config.ts",
+    "test:no-js": "pnpm test:ci --ui -c playwright-nojs.config.ts",
+    "test:ci": "pnpm playwright test -c playwright.config.ts",
+    "test:ci:no-js": "pnpm playwright test -c playwright-nojs.config.ts"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.3.1",
+    "@vercel/kv": "^0.2.1",
+    "next": "^13.4.3",
+    "nhsuk-frontend": "^7.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.7.1",
+    "@playwright/test": "^1.33.0",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.5",
+    "@types/react-dom": "18.2.3",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.4.0",
+    "sass": "^1.62.1",
+    "typescript": "5.0.4"
+  }
+}
