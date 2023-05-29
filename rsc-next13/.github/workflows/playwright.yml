@@ -13,12 +13,18 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
+        cache: 'pnpm'
     - name: Install dependencies
-      run: pnpm install
+      run: pnpm install --frozen-lockfile
     - name: Install Playwright Browsers
       run: pnpm exec playwright install --with-deps
-    - name: Run Playwright tests
-      run: pnpm exec playwright test
+    
+    - name: E2E With JS
+      run: pnpm test:ci
+    
+    - name: E2E Without JS
+      run: pnpm test:ci:no-js
+
     - uses: actions/upload-artifact@v3
       if: always()
       with:

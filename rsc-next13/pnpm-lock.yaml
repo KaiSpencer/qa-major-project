@@ -27,6 +27,12 @@ devDependencies:
   '@axe-core/playwright':
     specifier: ^4.7.1
     version: 4.7.1(playwright@1.33.0)
+  '@guidepup/guidepup':
+    specifier: ^0.17.1
+    version: 0.17.1
+  '@guidepup/playwright':
+    specifier: ^0.10.0
+    version: 0.10.0(@playwright/test@1.33.0)
   '@playwright/test':
     specifier: ^1.33.0
     version: 1.33.0
@@ -105,6 +111,27 @@ packages:
   /@eslint/js@8.39.0:
     resolution: {integrity: sha512-kf9RB0Fg7NZfap83B3QOqOGg9QmD9yBudqQXzzOtn3i4y7ZUXe5ONeW34Gwi+TxhH4mvj72R1Zc300KUMa9Bng==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dev: true
+
+  /@guidepup/guidepup@0.17.1:
+    resolution: {integrity: sha512-s7fbXHp9zkQuYcUxhq59hgHmqjlUjjHJrVccwW7xfLwLJ3nImBTj1EFm7ETVq8x7oLLWHUHO1DfEWtx6FO7iYQ==}
+    dependencies:
+      regedit: 5.0.1
+      semver: 7.5.0
+      shelljs: 0.8.5
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@guidepup/playwright@0.10.0(@playwright/test@1.33.0):
+    resolution: {integrity: sha512-uuh5MzYpvDVkzOrN8H27FzIj3X+tPpwPATgkscBZEOjSHA90QorP51OZFAONPdaSK4Y7YQV8Eyh+nig3YdFfOQ==}
+    peerDependencies:
+      '@playwright/test': ^1.29.2
+    dependencies:
+      '@guidepup/guidepup': 0.17.1
+      '@playwright/test': 1.33.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@humanwhocodes/config-array@0.11.8:
@@ -629,6 +656,10 @@ packages:
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    dev: true
+
+  /core-util-is@1.0.3:
+    resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
   /cross-spawn@7.0.3:
@@ -1407,6 +1438,10 @@ packages:
     engines: {node: '>=14.18.0'}
     dev: true
 
+  /if-async@3.7.4:
+    resolution: {integrity: sha512-BFEH2mZyeF6KZKaKLVPZ0wMjIiWOdjvZ7zbx8ENec0qfZhJwKFbX/4jKM5LTKyJEc/GOqUKiiJ2IFKT9yWrZqA==}
+    dev: true
+
   /ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
@@ -1446,6 +1481,11 @@ packages:
       get-intrinsic: 1.2.0
       has: 1.0.3
       side-channel: 1.0.4
+    dev: true
+
+  /interpret@1.4.0:
+    resolution: {integrity: sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==}
+    engines: {node: '>= 0.10'}
     dev: true
 
   /is-arguments@1.1.1:
@@ -1632,6 +1672,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-docker: 2.2.1
+    dev: true
+
+  /isarray@0.0.1:
+    resolution: {integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==}
     dev: true
 
   /isarray@2.0.5:
@@ -2097,11 +2141,38 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
+  /readable-stream@1.0.34:
+    resolution: {integrity: sha512-ok1qVCJuRkNmvebYikljxJA/UEsKwLl2nI1OmaqAu4/UE+h0wKCHok4XkL/gvi39OacXvw59RJUOFUkDib2rHg==}
+    dependencies:
+      core-util-is: 1.0.3
+      inherits: 2.0.4
+      isarray: 0.0.1
+      string_decoder: 0.10.31
+    dev: true
+
   /readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+
+  /rechoir@0.6.2:
+    resolution: {integrity: sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==}
+    engines: {node: '>= 0.10'}
+    dependencies:
+      resolve: 1.22.2
+    dev: true
+
+  /regedit@5.0.1:
+    resolution: {integrity: sha512-DiFTHk51G5d8bTAYGRDbHNJJPzg8EOF+3pNPdYjDc6kXOgObfayrVnjwfTseyzeIh5sVa+nhHkkVpmopUnOAQQ==}
+    dependencies:
+      debug: 4.3.4
+      if-async: 3.7.4
+      stream-slicer: 0.0.6
+      through2: 0.6.5
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /regenerator-runtime@0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
@@ -2212,6 +2283,16 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /shelljs@0.8.5:
+    resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==}
+    engines: {node: '>=4'}
+    hasBin: true
+    dependencies:
+      glob: 7.2.3
+      interpret: 1.4.0
+      rechoir: 0.6.2
+    dev: true
+
   /side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
     dependencies:
@@ -2243,6 +2324,10 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       internal-slot: 1.0.5
+    dev: true
+
+  /stream-slicer@0.0.6:
+    resolution: {integrity: sha512-QsY0LbweYE5L+e+iBQgtkM5WUIf7+kCMA/m2VULv8rEEDDnlDPsPvOHH4nli6uaZOKQEt64u65h0l/eeZo7lCw==}
     dev: true
 
   /streamsearch@1.1.0:
@@ -2286,6 +2371,10 @@ packages:
       call-bind: 1.0.2
       define-properties: 1.2.0
       es-abstract: 1.21.2
+    dev: true
+
+  /string_decoder@0.10.31:
+    resolution: {integrity: sha512-ev2QzSzWPYmy9GuqfIVildA4OdcGLeFZQrq5ys6RtiuF+RQQiZWr8TZNyAcuVXyQRYfEO+MsoB/1BuQVhOJuoQ==}
     dev: true
 
   /strip-ansi@6.0.1:
@@ -2359,6 +2448,13 @@ packages:
 
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
+    dev: true
+
+  /through2@0.6.5:
+    resolution: {integrity: sha512-RkK/CCESdTKQZHdmKICijdKKsCRVHs5KsLZ6pACAmF/1GPUQhonHSXWNERctxEp7RmvjdNbZTL5z9V7nSCXKcg==}
+    dependencies:
+      readable-stream: 1.0.34
+      xtend: 4.0.2
     dev: true
 
   /titleize@3.0.0:
@@ -2508,6 +2604,11 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+    dev: true
+
+  /xtend@4.0.2:
+    resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
+    engines: {node: '>=0.4'}
     dev: true
 
   /yallist@4.0.0:

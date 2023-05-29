@@ -11,8 +11,10 @@
     "lint": "next lint",
     "test": "pnpm test:ci --ui -c playwright.config.ts",
     "test:no-js": "pnpm test:ci --ui -c playwright-nojs.config.ts",
+    "test:screen-reader": "pnpm test:ci --ui screen-reader -c playwright-screen-reader.config.ts",
     "test:ci": "pnpm playwright test -c playwright.config.ts",
-    "test:ci:no-js": "pnpm playwright test -c playwright-nojs.config.ts"
+    "test:ci:no-js": "pnpm playwright test -c playwright-nojs.config.ts",
+    "test:ci:screen-reader": "pnpm playwright test -c playwright-screen-reader.config.ts"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.3.1",
@@ -25,6 +27,8 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.7.1",
+    "@guidepup/guidepup": "^0.17.1",
+    "@guidepup/playwright": "^0.10.0",
     "@playwright/test": "^1.33.0",
     "@types/node": "18.16.3",
     "@types/react": "18.2.5",

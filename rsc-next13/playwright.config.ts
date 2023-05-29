@@ -37,6 +37,10 @@ export const baseConfig: Config = {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
     },
+    {
+      name: "webkit",
+      use: { ...devices["Desktop Safari"], headless: false, video: "on" },
+    },
 
     /* Test against mobile viewports. */
     // {
