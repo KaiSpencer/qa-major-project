@@ -28,8 +28,11 @@ export default async function Home() {
           <div className='nhsuk-card nhsuk-card--clickable'>
             <div className='nhsuk-card__content'>
               <h2 className='nhsuk-card__heading nhsuk-heading-m'>
-                <a className='nhsuk-card__link' href='/multi-step-form'>
-                  Multiple Step Form
+                <a
+                  className='nhsuk-card__link'
+                  href='/multi-page-form/nhs-number'
+                >
+                  Multiple Page Form
                 </a>
               </h2>
               <p className='nhsuk-card__description'>
