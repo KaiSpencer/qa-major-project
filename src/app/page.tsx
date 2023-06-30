@@ -1,5 +1,10 @@
 export default async function Home() {
-  const res = await fetch("/api/hello", {});
+  const res = await fetch(
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/hello"
+      : "https://qa-major-project-next.vercel.app/api/hello",
+    {}
+  );
   const data = await res.text();
   return (
     <div>
